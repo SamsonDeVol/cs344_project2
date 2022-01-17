@@ -7,8 +7,9 @@
 
 int main (int argc, char *argv[]){
 
+  (void)argc;
   // open the file in read only mode
-  int fd= open(argv[1], O_RDONLY);
+  int fd = open(argv[1], O_RDONLY);
 
   // perror if no file is open
   if (fd == -1){
