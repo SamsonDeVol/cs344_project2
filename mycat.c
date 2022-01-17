@@ -26,10 +26,11 @@ int main(int argc, char *argv[]){
         perror("open");
       }
 
-      while (read(fd, buf, 1) > 0){
-        write(1, buf, 1);
+      while (count > 0){
+        count = read(fd, buf, sizeof buf);
+        write(1, buf, count);
       }
-      
+
       close(fd);
     }
   }
